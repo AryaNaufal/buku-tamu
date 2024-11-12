@@ -10,25 +10,25 @@ header("Expires: 0");
 <table border="1">
   <thead>
     <tr>
-      <th>Rekapitulasi Data Pengunjung</th>
+      <th>data tamu gedung grha bp jamsostek</th>
     </tr>
     <tr>
       <th>No</th>
       <th>Tanggal</th>
       <th>Nama Tamu</th>
       <th>Nama Perusahaan</th>
-      <th>Alamat</th>
-      <th>Jenis Kelamin</th>
+      <th>Kegiatan</th>
+      <th>Tujuan</th>
       <th>No Visitor</th>
-      <th>Nik KTP</th>
-      <th>No HP</th>
+      <th>Waktu Datang</th>
+      <th>Waktu Keluar</th>
     </tr>
   </thead>
   <tbody>
     <?php
     $tgl1 = $_POST['tanggala'];
     $tgl2 = $_POST['tanggalb'];
-    $tampil = mysqli_query($koneksi, "SELECT * FROM tamu WHERE tanggal BETWEEN '$tgl1' AND '$tgl2' order by tanggal desc");
+    $tampil = mysqli_query($koneksi, "SELECT * FROM tamu WHERE tanggal BETWEEN '$tgl1' AND '$tgl2' ORDER BY tanggal DESC");
     $no = 1;
     while ($data = mysqli_fetch_array($tampil)) {
     ?>
@@ -37,11 +37,11 @@ header("Expires: 0");
         <th><?= $data['tanggal'] ?></th>
         <th><?= $data['nama_tamu'] ?></th>
         <th><?= $data['nama_perusahaan'] ?></th>
-        <th><?= $data['alamat'] ?></th>
-        <th><?= $data['jenis_kelamin'] ?></th>
+        <th><?= $data['kegiatan'] ?></th>
+        <th><?= $data['tujuan'] ?></th>
         <th><?= $data['no_visitor'] ?></th>
-        <th><?= $data['nik_ktp'] ?></th>
-        <th><?= $data['no_telp'] ?></th>
+        <th><?= $data['waktu_datang'] ?></th>
+        <th><?= $data['waktu_keluar'] ?></th>
       </tr>
     <?php } ?>
   </tbody>

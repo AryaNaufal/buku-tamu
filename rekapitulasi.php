@@ -80,11 +80,11 @@
                     <th><?= $data['tanggal'] ?></th>
                     <th><?= $data['nama_tamu'] ?></th>
                     <th><?= $data['nama_perusahaan'] ?></th>
-                    <th><?= $data['alamat'] ?></th>
-                    <th><?= $data['jenis_kelamin'] ?></th>
+                    <th><?= $data['kegiatan'] ?></th>
+                    <th><?= $data['tujuan'] ?></th>
                     <th><?= $data['no_visitor'] ?></th>
-                    <th><?= $data['nik_ktp'] ?></th>
-                    <th><?= $data['no_telp'] ?></th>
+                    <th><?= $data['waktu_datang'] ?></th>
+                    <th><?= $data['waktu_keluar'] ?></th>
                   </tr>
                 <?php } ?>
               </tbody>
@@ -93,7 +93,7 @@
               <form method="POST" action="exportexcel.php">
                 <div class="col-md-4">
                   <input type="hidden" name="tanggala" value="<?= $_POST['tanggal1'] ?>">
-                  <input type="hidden" name="tanggalb" value="<?= $_POST['tanggal1'] ?>">
+                  <input type="hidden" name="tanggalb" value="<?= $_POST['tanggal2'] ?>">
                 </div>
 
                 <button class="btn btn-success form-control" name="export">

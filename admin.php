@@ -10,14 +10,14 @@ if (isset($_POST['bsimpan'])) {
 	// htmlspecialchars agar inputan lebih aman dari injection
 	$nama_tamu = htmlspecialchars($_POST['nama_tamu'], ENT_QUOTES);
 	$nama_perusahaan = htmlspecialchars($_POST['nama_perusahaan'], ENT_QUOTES);
-	$jenis_kelamin = htmlspecialchars($_POST['jenis_kelamin'], ENT_QUOTES);
+	$kegiatan = htmlspecialchars($_POST['kegiatan'], ENT_QUOTES);
+	$tujuan = htmlspecialchars($_POST['tujuan'], ENT_QUOTES);
 	$no_visitor = htmlspecialchars($_POST['no_visitor'], ENT_QUOTES);
-	$nik_ktp = htmlspecialchars($_POST['nik_ktp'], ENT_QUOTES);
-	$no_telp = htmlspecialchars($_POST['no_telp'], ENT_QUOTES);
-	$alamat = htmlspecialchars($_POST['alamat'], ENT_QUOTES);
+	$waktu_datang = htmlspecialchars($_POST['waktu_datang'], ENT_QUOTES);
+	$waktu_keluar = htmlspecialchars($_POST['waktu_keluar'], ENT_QUOTES);
 
 	//persiapan  query simpan  data
-	$simpan = mysqli_query($koneksi, "INSERT INTO tamu VALUES ('', '$tgl', '$nama_tamu', '$nama_perusahaan', '$jenis_kelamin', '$no_visitor', '$nik_ktp', '$no_telp', '$alamat')");
+	$simpan = mysqli_query($koneksi, "INSERT INTO tamu VALUES ('', '$tgl', '$nama_tamu', '$nama_perusahaan', '$kegiatan', '$tujuan', '$no_visitor', '$waktu_datang', '$waktu_keluar')");
 
 	//Uji Jika simpan data sukses
 	if ($simpan) {
@@ -57,23 +57,19 @@ if (isset($_POST['bsimpan'])) {
 						<input type="text" class="form-control form-control-user" name="nama_perusahaan" placeholder="Nama Perusahaan" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control form-control-user" name="alamat" placeholder="Alamat" required>
+						<input type="text" class="form-control form-control-user" name="kegiatan" placeholder="Kegiatan" required>
 					</div>
 					<div class="form-group">
-						<select class="form-select form-control-user w-100 p-3" name="jenis_kelamin" style="border: 1px solid #d1d3e2; color: #6e707e;" required>
-							<option selected>-- Pilih Jenis Kelamin --</option>
-							<option value="Laki-Laki">Laki-Laki</option>
-							<option value="Perempuan">Perempuan</option>
-						</select>
+						<input type="text" class="form-control form-control-user" name="tujuan" placeholder="Tujuan" required>
 					</div>
 					<div class="form-group">
 						<input type="number" class="form-control form-control-user" name="no_visitor" placeholder="No Visitor" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control form-control-user" name="nik_ktp" placeholder="Nik KTP" required>
+						<input type="time" class="form-control form-control-user" name="waktu_datang" placeholder="Waktu Datang" required>
 					</div>
 					<div class="form-group">
-						<input type="number" class="form-control form-control-user" name="no_telp" placeholder="No Telp" required>
+						<input type="time" class="form-control form-control-user" name="waktu_keluar" placeholder="Waktu Keluar" required>
 					</div>
 
 					<button type="submit" name="bsimpan" class="btn btn-primary btn-user btn-block">Simpan Data</button>
@@ -182,11 +178,11 @@ if (isset($_POST['bsimpan'])) {
 						<th>Tanggal</th>
 						<th>Nama Tamu</th>
 						<th>Nama Perusahaan</th>
-						<th>Alamat</th>
-						<th>Jenis Kelamin</th>
+						<th>Kegiatan</th>
+						<th>Tujuan</th>
 						<th>No Visitor</th>
-						<th>Nik KTP</th>
-						<th>No HP</th>
+						<th>Waktu Datang</th>
+						<th>Waktu Keluar</th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -195,11 +191,11 @@ if (isset($_POST['bsimpan'])) {
 						<th>Tanggal</th>
 						<th>Nama Tamu</th>
 						<th>Nama Perusahaan</th>
-						<th>Alamat</th>
-						<th>Jenis Kelamin</th>
+						<th>Kegiatan</th>
+						<th>Tujuan</th>
 						<th>No Visitor</th>
-						<th>Nik KTP</th>
-						<th>No HP</th>
+						<th>Waktu Datang</th>
+						<th>Waktu Keluar</th>
 					</tr>
 				</tfoot>
 				<tbody>
@@ -214,11 +210,11 @@ if (isset($_POST['bsimpan'])) {
 							<th><?= $data['tanggal'] ?></th>
 							<th><?= $data['nama_tamu'] ?></th>
 							<th><?= $data['nama_perusahaan'] ?></th>
-							<th><?= $data['alamat'] ?></th>
-							<th><?= $data['jenis_kelamin'] ?></th>
+							<th><?= $data['kegiatan'] ?></th>
+							<th><?= $data['tujuan'] ?></th>
 							<th><?= $data['no_visitor'] ?></th>
-							<th><?= $data['nik_ktp'] ?></th>
-							<th><?= $data['no_telp'] ?></th>
+							<th><?= $data['waktu_datang'] ?></th>
+							<th><?= $data['waktu_keluar'] ?></th>
 						</tr>
 					<?php } ?>
 				</tbody>
