@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2024 at 11:12 AM
+-- Generation Time: Nov 12, 2024 at 05:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -32,11 +32,11 @@ CREATE TABLE `tamu` (
   `tanggal` date NOT NULL,
   `nama_tamu` varchar(100) NOT NULL,
   `nama_perusahaan` varchar(100) NOT NULL,
-  `jenis_kelamin` enum('Laki-Laki','Perempuan','','') NOT NULL,
+  `kegiatan` varchar(100) NOT NULL,
+  `tujuan` varchar(100) NOT NULL,
   `no_visitor` int(100) NOT NULL,
-  `nik_ktp` int(100) NOT NULL,
-  `no_telp` varchar(100) NOT NULL,
-  `alamat` varchar(100) NOT NULL
+  `waktu_datang` time NOT NULL DEFAULT current_timestamp(),
+  `waktu_keluar` time NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
