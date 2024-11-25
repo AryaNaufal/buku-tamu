@@ -30,9 +30,9 @@ if (isset($_POST['bsimpan'])) {
 
 
 <!-- Head -->
-<div class="head text-center">
+<div class="head text-center py-5">
 
-	<img src="assets/img/logo.jpg" width="400">
+	<img src="assets/img/logo.png" width="400">
 	<hr class="text-white">Graha BPJamsostek Buku Tamu <br> Bijak</h2>
 </div>
 <!-- end Head -->
